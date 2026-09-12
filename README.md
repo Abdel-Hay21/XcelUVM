@@ -1,3 +1,7 @@
+# XcelUVM
+
+[![GitHub release](https://img.shields.io/github/v/release/Abdel-Hay21/XcelUVM)](https://github.com/Abdel-Hay21/XcelUVM/releases/latest)
+[![License](https://img.shields.io/github/license/Abdel-Hay21/XcelUVM)](LICENSE)
 <div align="center">
 
 <img width="546" height="557" alt="Logo" src="https://github.com/user-attachments/assets/ce583188-cfcd-42bc-bbeb-4dbb42fbe588" />
