@@ -130,14 +130,9 @@ XcelUVM generates every layer of a standard UVM testbench:
 
 ---
 
-### 🧩 Agent Topology Options
+### 🧩 Agent Architecture
 
-| Topology | Description |
-|----------|-------------|
-| **Single Agent** | One active agent (driver + monitor + sequencer) — ideal for single-interface DUTs |
-| **Multi-Agent** | Configurable number of **active agents** (driver+monitor) and **passive agents** (monitor-only) — for complex SoCs, multi-channel designs, and bus protocols |
-
-Each agent in multi-agent mode gets its own named interface, independently configured port list, and optional clock signal.
+XcelUVM generates a **single-agent** UVM environment — one active agent (driver + monitor + sequencer), ideal for single-interface DUTs. The agent gets its own named interface, configured port list, and optional clock signal.
 
 ---
 
@@ -146,8 +141,7 @@ Each agent in multi-agent mode gets its own named interface, independently confi
 - **Automatic RTL Parsing:** Point XcelUVM to your `.sv` / `.v` files and it automatically parses all top-level module ports — including bit-widths, directions, parameterized types, and custom `typedef` widths.
 - **Manual Port Entry:** Add, remove, or modify ports through an interactive port editor.
 - **Drag & Drop file ordering** — the first file is automatically marked as the top module.
-- **Per-agent port assignment** in multi-agent mode — each interface gets its own input/output port list.
-- **Clock signal detection** — specify which port is the clock per interface.
+- **Clock signal detection** — specify which port is the clock for the interface.
 
 ---
 
@@ -175,7 +169,6 @@ Toggle each feature independently from the Options step:
 ### 📄 Auto-Generated Documentation
 
 An **architecture PDF guide** is automatically copied into the `doc/` folder, matched to your configuration:
-- **Single-Agent vs Multi-Agent**
 - **SB (Software Reference) vs RTL (RTL Reference)**
 - **With or without** Assertions / Coverage
 
@@ -191,7 +184,7 @@ Auto-generates a **`wave.do`** QuestaSim/ModelSim script that adds all interface
 
 - All project settings are written to a `run.tcl` configuration file.
 - Re-opening XcelUVM **automatically restores** the last used configuration — no re-entry needed.
-- State persists across: project name, output path, port lists, sequences, module names, source files, agent topology, all toggles.
+- State persists across: project name, output path, port lists, sequences, module names, source files, all toggles.
 
 ---
 
@@ -270,9 +263,9 @@ python Frontend/main.py
 | **1 — Project** | Set project name and output directory |
 | **2 — Reference Model** | Choose SB (SW model) or RTL mode; select language if SB |
 | **3 — Options** | Toggle Assertions, Functional Coverage, Code Coverage |
-| **4 — Agents** | Select Single or Multi-Agent; configure active/passive counts |
+| **4 — Agent** | Configure the single-agent setup (driver + monitor + sequencer) |
 | **5 — Module Names** | Enter DUT (and Golden Model for RTL mode) names; add source files |
-| **6 — Ports** | Configure port lists per agent (auto-parse RTL or enter manually) |
+| **6 — Ports** | Configure the port list for the agent (auto-parse RTL or enter manually) |
 | **7 — Sequences** | Define test sequences with names and transaction counts |
 | **⚡ Generate** | Click **GENERATE UVM** and watch the real-time log |
 | **🤖 AI Phase** | Enter API key, pick a model, provide optional instructions, generate |
@@ -293,7 +286,6 @@ XcelUVM/
 │   └── ui/
 │       ├── main_window.py           ← 7-step wizard
 │       ├── ai_prompt_overlay.py     ← Cinematic AI overlay
-│       ├── agent_cards.py           ← Agent topology cards
 │       ├── gm_cards.py              ← Reference model cards
 │       ├── sections.py              ← Port & sequence editors
 │       ├── widgets.py               ← Shared custom widgets
