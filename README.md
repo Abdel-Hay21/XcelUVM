@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="192" height="114" alt="Logo" src="https://github.com/user-attachments/assets/ce583188-cfcd-42bc-bbeb-4dbb42fbe588" />
+<img width="546" height="557" alt="Logo" src="https://github.com/user-attachments/assets/ce583188-cfcd-42bc-bbeb-4dbb42fbe588" />
 
 # XcelUVM
 
